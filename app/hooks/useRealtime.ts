@@ -6,7 +6,7 @@ import type { SharedState } from "@/app/types"
 
 export function useRealtime() {
   const [state, setState] = useState<SharedState>(realtimeClient.getState())
-  const [isConnected, setIsConnected] = useState(true) // Mock connection status
+  const [isConnected] = useState(true) // Mock connection status
 
   useEffect(() => {
     const unsubscribe = realtimeClient.subscribe(setState)

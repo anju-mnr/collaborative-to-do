@@ -84,6 +84,7 @@ class MockRealtimeClient {
   }
 
   removeUser(userId: string): void {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { [userId]: removed, ...users } = this.state.users
     this.setState({ users })
   }

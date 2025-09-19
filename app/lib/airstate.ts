@@ -1,5 +1,5 @@
-import { AirState } from "@airstate/client"
-import type { SharedState } from "@/types"
+import { createClient } from "@airstate/client"
+import type { SharedState } from "@/app/types"
 
 // Validate environment variables
 if (!process.env.NEXT_PUBLIC_AIRSTATE_APP_ID) {
@@ -11,7 +11,7 @@ if (!process.env.NEXT_PUBLIC_AIRSTATE_APP_ID) {
 }
 
 // Initialize AirState client
-export const airstate = new AirState({
+export const airstate = createClient({
   appId: process.env.NEXT_PUBLIC_AIRSTATE_APP_ID,
 })
 

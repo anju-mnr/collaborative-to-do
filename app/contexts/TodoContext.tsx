@@ -119,7 +119,7 @@ export function TodoProvider({ children }: { children: ReactNode }) {
       if (savedState) {
         try {
           const parsedState = JSON.parse(savedState)
-          const tasksWithDates = parsedState.tasks.map((task: any) => ({
+          const tasksWithDates = parsedState.tasks.map((task: Task) => ({
             ...task,
             createdAt: new Date(task.createdAt),
           }))
@@ -157,7 +157,7 @@ export function TodoProvider({ children }: { children: ReactNode }) {
     channel.onmessage = (event) => {
       if (event.data.type === "STATE_UPDATE") {
         const { tasks, users } = event.data.payload
-        const tasksWithDates = tasks.map((task: any) => ({
+        const tasksWithDates = tasks.map((task: Task) => ({
           ...task,
           createdAt: new Date(task.createdAt),
         }))
@@ -200,7 +200,7 @@ export function TodoProvider({ children }: { children: ReactNode }) {
     if (savedState) {
       try {
         const parsedState = JSON.parse(savedState)
-        const tasksWithDates = parsedState.tasks.map((task: any) => ({
+        const tasksWithDates = parsedState.tasks.map((task: Task) => ({
           ...task,
           createdAt: new Date(task.createdAt),
         }))
@@ -271,6 +271,7 @@ export function TodoProvider({ children }: { children: ReactNode }) {
 
   const removeUser = useCallback((userId: string) => {
     setState((prevState) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { [userId]: removed, ...users } = prevState.users
       return {
         ...prevState,

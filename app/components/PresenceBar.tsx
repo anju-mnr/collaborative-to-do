@@ -1,5 +1,5 @@
 "use client"
-import { Users, User, LogOut, ChevronDown } from "lucide-react"
+import { Users, LogOut, ChevronDown } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,

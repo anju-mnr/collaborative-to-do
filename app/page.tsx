@@ -86,7 +86,7 @@ export default function Home() {
       setCurrentUser(user)
       currentUserIdRef.current = user.id
       setUser(user.id, user)
-    } catch (err) {
+    } catch {
       setError("Failed to join session. Please try again.")
     } finally {
       setIsLoading(false)

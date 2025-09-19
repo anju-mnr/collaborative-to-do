@@ -1,6 +1,5 @@
 # Collaborative To-Do List
 
-Thought for 4s## Collaborative To-Do App Overview
 
 This is a **collaborative task management web application** built with Next.js 14, TypeScript, and Tailwind CSS. Here's how it works and its key features:
 
